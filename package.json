@@ -1,0 +1,41 @@
+{
+  "name": "@digitalbazaar/did-resolution",
+  "version": "0.1.0-0",
+  "description": "DID resolution for the DID Resolution specification",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib/**/*.js"
+  ],
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 30000 -R ${REPORTER:-spec} tests/*.spec.js",
+    "coverage": "cross-env NODE_ENV=test c8 npm run test-node",
+    "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly --reporter=text-summary --reporter=text npm run test-node",
+    "coverage-report": "c8 report",
+    "lint": "eslint --ext .cjs,.js ."
+  },
+  "devDependencies": {
+    "c8": "^10.1.2",
+    "chai": "^4.5.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-digitalbazaar": "^5.2.0",
+    "eslint-plugin-jsdoc": "^48.11.0",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "mocha": "^10.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/did-resolution"
+  },
+  "keywords": [
+    "did",
+    "decentralized identifier",
+    "did resolution"
+  ]
+}
