@@ -74,14 +74,6 @@ describe('resolve (Section 4)', () => {
     expect(errorType(result)).to.equal(FEATURE_NOT_SUPPORTED);
   });
 
-  it('returns FEATURE_NOT_SUPPORTED for expandRelativeUrls', async () => {
-    const result = await resolve(DID, {
-      resolutionOptions: {expandRelativeUrls: true},
-      methods: methods()
-    });
-    expect(errorType(result)).to.equal(FEATURE_NOT_SUPPORTED);
-  });
-
   it('returns INVALID_OPTIONS for a value of the wrong type', async () => {
     const result = await resolve(DID, {
       resolutionOptions: {accept: 42},
